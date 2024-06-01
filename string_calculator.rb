@@ -17,6 +17,9 @@ class StringCalculator
       numbers_part = input
     end
 
+    regex_pattern = Regexp.union(delimiters)
+    numbers = numbers_part.split(regex_pattern).map(&:to_i)
+
 
   end
 end
