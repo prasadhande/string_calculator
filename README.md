@@ -56,10 +56,15 @@ The StringCalculator class provides a single class method add which takes a stri
 require_relative 'string_calculator'
 
 puts StringCalculator.add("")           # Output: 0
+
 puts StringCalculator.add("1")          # Output: 1
+
 puts StringCalculator.add("1,2")        # Output: 3
+
 puts StringCalculator.add("1,2,3,4")    # Output: 10
+
 puts StringCalculator.add("1\n2,3")     # Output: 6
+
 puts StringCalculator.add("//;\n1;2")   # Output: 3
 
 begin
@@ -68,9 +73,13 @@ rescue => e
   puts e.message                       # Output: "negatives not allowed: -2, -3"
 end
 
+
 puts StringCalculator.add("2,1001")     # Output: 2
+
 puts StringCalculator.add("//[***]\n1***2***3") # Output: 6
+
 puts StringCalculator.add("//[*][%]\n1*2%3")    # Output: 6
+
 puts StringCalculator.add("//[***][%%%]\n1***2%%%3") # Output: 6
 
 
