@@ -7,6 +7,12 @@ require_relative '../string_calculator'
     end
 
 
+   context "when input has one number" do
+      it "returns the number itself" do
+        expect(StringCalculator.add("1")).to eq(1)
+      end
+    end
 
+    
   end
 end
