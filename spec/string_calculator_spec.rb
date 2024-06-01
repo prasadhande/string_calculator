@@ -139,6 +139,11 @@ RSpec.describe StringCalculator do
     end
 
 
+    context "when input has multiple delimiters with length longer than one char" do
+      it "returns the sum of all numbers" do
+        expect(StringCalculator.add("//[***][%%%]\n1***2%%%3")).to eq(6)
+      end
+    end
 
   end
 end
