@@ -13,6 +13,17 @@ require_relative '../string_calculator'
       end
     end
 
+    context "when input has two numbers" do
+      it "returns the sum of the numbers" do
+        expect(StringCalculator.add("1,2")).to eq(3)
+      end
+    end
+
+    context "when input has unknown amount of numbers" do
+      it "returns the sum of all numbers" do
+        expect(StringCalculator.add("1,2,3,4")).to eq(10)
+      end
+    end
     
   end
 end
