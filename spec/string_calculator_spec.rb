@@ -7,5 +7,10 @@ RSpec.describe StringCalculator do
       calculator = StringCalculator.new
       expect(calculator.add('')).to eq(0)
     end
+
+    it 'returns the number when a single number is passed' do
+      calculator = StringCalculator.new
+      expect(calculator.add('5')).to eq(5)
+    end
   end
 end
