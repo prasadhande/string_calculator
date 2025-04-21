@@ -2,11 +2,19 @@
 class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
-    puts "Input numbers: #{numbers.inspect}" # Debug
-    number_array = numbers.split(/[,\n]/)
-    puts "Number array (strings): #{number_array.inspect}" # Debug
-    int_array = number_array.map(&:to_i)
-    puts "Integer array: #{int_array.inspect}" # Debug
-    int_array.sum
+
+    delimiters = [",", "\n"]
+    if numbers.start_with?("//")
+      parts = numbers.split("\n", 2)
+      if parts.length > 1
+        custom_delimiter = Regexp.escape(parts[0][2])
+        delimiters << custom_delimiter
+        numbers = parts[1]
+      end
+    end
+
+    regex = Regexp.union(delimiters)
+    number_array = numbers.split(regex).map(&:to_i)
+    number_array.sum
   end
 end

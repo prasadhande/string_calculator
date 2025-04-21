@@ -29,5 +29,14 @@ RSpec.describe StringCalculator do
       puts "Actual result: #{result}" # Debugging output in test
       expect(result).to eq(6)
     end
+    it 'supports a custom delimiter defined at the beginning of the string' do
+      calculator = StringCalculator.new
+      expect(calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it 'supports another custom delimiter' do
+      calculator = StringCalculator.new
+      expect(calculator.add("//%\n5%3")).to eq(8)
+    end
   end
 end
