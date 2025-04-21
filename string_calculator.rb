@@ -1,6 +1,7 @@
 # string_calculator.rb
 class StringCalculator
   def add(numbers)
-    numbers.empty? ? 0 : numbers.to_i
+    return 0 if numbers.empty?
+    numbers.split(',').map(&:to_i).sum
   end
 end
