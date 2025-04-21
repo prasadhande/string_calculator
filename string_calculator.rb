@@ -14,7 +14,7 @@ class StringCalculator
     end
 
     regex = Regexp.union(delimiters)
-    number_array = numbers.split(regex).map(&:to_i)
+    number_array = numbers.split(regex).map(&:to_i).reject { |num| num > 1000 }
     negatives = number_array.select { |num| num < 0 }
 
     if negatives.any?
