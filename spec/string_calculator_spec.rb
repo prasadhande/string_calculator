@@ -49,10 +49,16 @@ RSpec.describe StringCalculator do
       expect { calculator.add('2,-4,-5,6') }.to raise_error(RuntimeError, 'negative numbers not allowed: -4,-5')
     end
 
-    it 'ignores numbers greater than 1000' do
+    it 'ignores numbers greater than 1000' do 
       calculator = StringCalculator.new
       expect(calculator.add('1,1001,2')).to eq(3)
     end
-    
+
+    # Additional test cases from Want More
+    it 'supports delimiters of any length' do
+      calculator = StringCalculator.new
+      expect(calculator.add("//[***]\n1***2***3")).to eq(6)
+    end
+
   end
 end
