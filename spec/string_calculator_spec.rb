@@ -22,5 +22,12 @@ RSpec.describe StringCalculator do
       calculator = StringCalculator.new
       expect(calculator.add('1,2,3,4,5')).to eq(15)
     end
+
+    it 'handles new lines as separators' do
+      calculator = StringCalculator.new
+      result = calculator.add("1\n2,3")
+      puts "Actual result: #{result}" # Debugging output in test
+      expect(result).to eq(6)
+    end
   end
 end
