@@ -26,7 +26,7 @@ RSpec.describe StringCalculator do
     it 'handles new lines as separators' do
       calculator = StringCalculator.new
       result = calculator.add("1\n2,3")
-      puts "Actual result: #{result}" # Debugging output in test
+      # puts "Actual result: #{result}" # Debugging output in test
       expect(result).to eq(6)
     end
     it 'supports a custom delimiter defined at the beginning of the string' do
@@ -37,6 +37,16 @@ RSpec.describe StringCalculator do
     it 'supports another custom delimiter' do
       calculator = StringCalculator.new
       expect(calculator.add("//%\n5%3")).to eq(8)
+    end
+
+    it 'throws an exception for a single negative number' do
+      calculator = StringCalculator.new
+      expect { calculator.add('-1') }.to raise_error(RuntimeError, 'negative numbers not allowed: -1')
+    end
+
+    it 'throws an exception for multiple negative numbers' do
+      calculator = StringCalculator.new
+      expect { calculator.add('2,-4,-5,6') }.to raise_error(RuntimeError, 'negative numbers not allowed: -4,-5')
     end
   end
 end

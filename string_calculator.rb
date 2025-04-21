@@ -15,6 +15,12 @@ class StringCalculator
 
     regex = Regexp.union(delimiters)
     number_array = numbers.split(regex).map(&:to_i)
+    negatives = number_array.select { |num| num < 0 }
+
+    if negatives.any?
+      raise RuntimeError, "negative numbers not allowed: #{negatives.join(',')}"
+    end
+
     number_array.sum
   end
 end
