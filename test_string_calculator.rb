@@ -14,7 +14,9 @@ test_cases = {
   "Custom another single-character delimiter" => ["//%\n5%3", 8],
   "Single negative number" => ["-1", "RuntimeError: negative numbers not allowed: -1"],
   "Multiple negative numbers" => ["2,-4,-5,6", "RuntimeError: negative numbers not allowed: -4,-5"],
-  "Ignore numbers > 1000" => ["1,1001,2", 3]
+  "Ignore numbers > 1000" => ["1,1001,2", 3],
+  "Multiple single-character delimiters" => ["//[*][%]\n1*2%3", 6],
+  "Custom delimiter of any length" => ["//[***]\n1***2***3", 6]
 }
 
 # Run test cases
