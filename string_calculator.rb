@@ -9,12 +9,12 @@ class StringCalculator
       if parts.length > 1
         header = parts[0][2..]
         numbers = parts[1]
-        if header.start_with?('[')
+
+        if header.include?('[')
           header.scan(/\[(.*?)\]/).flatten.each do |delim|
             delimiters << Regexp.escape(delim)
           end
         else
-          # Handle single-character delimiter(s)
           header.chars.each do |char|
             delimiters << Regexp.escape(char) unless char.empty?
           end
