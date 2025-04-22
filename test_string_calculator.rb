@@ -17,7 +17,8 @@ test_cases = {
   "Ignore numbers > 1000" => ["1,1001,2", 3],
   "Multiple single-character delimiters" => ["//[*][%]\n1*2%3", 6],
   "Custom delimiter of any length" => ["//[***]\n1***2***3", 6],
-  "Allows multiple multi-character delimiters" => ["//[**][%%]\n1**2%%3", 6]
+  "Allows multiple multi-character delimiters" => ["//[**][%%]\n1**2%%3", 6],
+  "Allows multiple delimiters with different lengths" => ["//[*][%%]\n1*2%%3", 6]
 }
 
 # Run test cases
