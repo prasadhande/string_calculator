@@ -97,3 +97,30 @@ puts calculator.add("//[***]\n1***2***3") # Output: 6
 puts calculator.add("//[*][%]\n1*2%3")   # Output: 6
 puts calculator.add("//[**][%%]\n1**2%%3") # Output: 6
 puts calculator.add("//[*][%%]\n1*2%%3")  # Output: 6
+
+
+
+
+
+
+Possible Enhancements and Refactoring
+Here are some potential ways to enhance or refactor the string_calculator.rb code:
+
+Refactoring Ideas:
+
+Extract Delimiter Parsing: The logic for handling custom delimiters (the if numbers.start_with?("//") block) could be extracted into a private helper method to improve the readability and maintainability of the add method. This has already been explored in the code and is a recommended refactoring.
+
+Separate Number Parsing and Validation: The process of splitting the string into numbers, converting them to integers, and filtering those greater than 1000 could be moved into its own private method. This further separates concerns within the class.
+
+
+Possible Enhancements:
+
+Allowing Different Delimiter Markers: The current implementation uses // to indicate a custom delimiter. We could potentially allow other markers or more complex delimiter specifications.
+
+Handling Different Error Types: Instead of always raising a generic RuntimeError for negative numbers, we could create a custom exception class specifically for this scenario.
+
+More Sophisticated Error Reporting: When negative numbers are found, the error message could include the indices or positions of the negative numbers in the input string.
+
+Support for More Complex Number Formats: The current implementation assumes simple integer numbers. We could potentially extend it to handle floating-point numbers or other formats.
+
+Configuration Options: We could introduce configuration options to control whether negative numbers should throw errors or be ignored, or to specify default delimiters.
