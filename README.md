@@ -22,7 +22,6 @@ string-calculator-ruby/
 * `Gemfile`: Defines the project dependencies (RSpec).
 * `Gemfile.lock`: Records the exact versions of the dependencies used.
 * `README.md`: This file, providing an overview of the project.
-* `Rakefile`: Used for running RSpec tests.
 * `spec/string_calculator_spec.rb`: Contains the RSpec test suite for the `StringCalculator` class.
 * `string_calculator.rb`: Contains the implementation of the `StringCalculator` class.
 * test_string_calculator.rb: script directly tests the StringCalculator class by running a series of predefined input strings and comparing the actual output 
