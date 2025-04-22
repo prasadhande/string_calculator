@@ -33,7 +33,7 @@ The calculator's `add` method can handle the following:
 * **Two Comma-Separated Numbers:** Returns their sum.
 * **Any Amount of Comma-Separated Numbers:** Returns the sum of all numbers.
 * **New Lines as Separators:** Allows `\n` as an alternative delimiter to commas.
-* **Custom Single-Character Delimiter:** Supports a custom delimiter defined at the beginning of the string using the format `//[delimiter]\n[numbers]`. For example, `//;\n1;2` should return 3.
+* **Custom Single-Character Delimiters:** Supports custom single-character delimiters defined at the beginning of the string using the format `//[delimiter]\n[numbers]`. For example, `//;\n1;2` and `//%\n5%3` both work.
 * **Negative Numbers:** Throws a `RuntimeError` with the message "negative numbers not allowed: \[list of negative numbers]" if negative numbers are present in the input.
 * **Numbers Greater Than 1000:** Numbers greater than 1000 are ignored in the calculation.
 * **Delimiters of Any Length:** Supports custom delimiters of any length using the format `//[[delimiter]]\n[numbers]`. For example, `//[***]\n1***2***3` should return 6.
