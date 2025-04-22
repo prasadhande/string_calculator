@@ -6,13 +6,6 @@ This project implements a string calculator in Ruby following Test-Driven Develo
 
 ## Project Structure
 
-.
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── spec
-│   └── string_calculator_spec.rb
-└── string_calculator.rb
 
 
 string-calculator-ruby/
